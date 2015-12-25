@@ -1,0 +1,7 @@
+tornado
+tornado_json
+celery
+redis
+requests
+peewee
+psycopg2

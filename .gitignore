@@ -1,0 +1,7 @@
+
+# ignore
+.tox
+.cache
+.idea
+
+*.pyc
