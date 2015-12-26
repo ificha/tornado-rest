@@ -13,7 +13,7 @@ psql_db = PostgresqlDatabase(
 class Queries(Model):
     query_id = IntegerField(primary_key=True, index=True)
     createdon = DateTimeField(default=datetime.datetime.now)
-    query_type = CharField(default='')
+    query_type = CharField(default='') # cohort; subcohort
     result_location = CharField(default='')
     status = CharField(default='')
     result = TextField(default='')
@@ -24,6 +24,8 @@ class Queries(Model):
 
 class Jobs(Model):
     job_id = UUIDField(primary_key=True, index=True)
+    job_type = CharField(default='') # query; page_request
+    job_params = CharField(default='') # for page_request -> cache_key
     query = ForeignKeyField(Queries, related_name='jobs')
     query_name = CharField(default='')
     status = CharField(default='')

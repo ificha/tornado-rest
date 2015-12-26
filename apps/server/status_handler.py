@@ -1,6 +1,7 @@
 
 from tornado_json.requesthandlers import APIHandler
 from tornado_json import schema
+import json
 
 class StatusHandler(APIHandler):
 
@@ -13,4 +14,5 @@ class StatusHandler(APIHandler):
         },
     )
     def get(self):
-        self.success({"status": "ok"})
+
+        return {"status": "ok"}
