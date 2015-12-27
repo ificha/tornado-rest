@@ -79,7 +79,7 @@ class JobHandler(APIHandler):
                 # request job is running
                 if request_page_job is not None:
                     if request_page_job.status not in ['SUCCESS', 'FAILURE']:
-                        return {'ticket': request_page_job.job_id }
+                        return {'ticket': str(request_page_job.job_id) }
                     else:
                         return {'status': request_page_job.status}
 
